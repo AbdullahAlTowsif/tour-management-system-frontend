@@ -12,7 +12,7 @@ export default defineConfig({
     },
   },
   // custom port to run | previous: 5173 (default) | now: 3000
-  server: {
-    port: 3000
-  }
+  // server: {
+  //   port: 3000
+  // }
 })
