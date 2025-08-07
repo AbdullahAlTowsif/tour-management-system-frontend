@@ -5,7 +5,7 @@ const authApi = baseApi.injectEndpoints({
         // when we post something using axios then we send the info through data✅ not body❌
         login: builder.mutation({
             query: (userInfo) => ({
-                url: "/user/login",
+                url: "/auth/login",
                 method: "POST",
                 data: userInfo,
                 // body: userInfo,
