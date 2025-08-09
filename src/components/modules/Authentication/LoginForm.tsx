@@ -8,6 +8,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import config from "@/config";
 import { cn } from "@/lib/utils";
 import { useLoginMutation } from "@/redux/features/auth/auth.api";
 import { useForm, type FieldValues, type SubmitHandler } from "react-hook-form";
@@ -24,6 +25,10 @@ export function LoginForm({
   const onSubmit: SubmitHandler<FieldValues> = async (data) => {
     try {
       const res = await login(data).unwrap();
+      if(res.success) {
+        toast.success("User Logged In Successfully!");
+        navigate("/");
+      }
       console.log(res);
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (err: any) {
@@ -32,6 +37,10 @@ export function LoginForm({
       if (err.status === 401) {
         toast.error("Your account is not verified");
         navigate("/verify", { state: data.email });
+      }
+
+      if(err.data.message === "Password doesn't Match") {
+        toast.error("Invalid Credentials");
       }
     }
   };
@@ -97,6 +106,7 @@ export function LoginForm({
         </div>
 
         <Button
+        onClick={() => window.open(`${config.baseUrl}/auth/google`)}
           type="button"
           variant="outline"
           className="w-full cursor-pointer"
