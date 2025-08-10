@@ -151,7 +151,7 @@ export function RegisterForm({
                 </FormItem>
               )}
             />
-            <Button type="submit" className="w-full">
+            <Button type="submit" className="w-full hover:cursor-pointer">
               Submit
             </Button>
           </form>

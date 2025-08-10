@@ -93,7 +93,7 @@ export function LoginForm({
               )}
             />
 
-            <Button type="submit" className="w-full">
+            <Button type="submit" className="w-full hover:cursor-pointer">
               Login
             </Button>
           </form>
