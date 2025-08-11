@@ -27,7 +27,7 @@ const data = {
   return (
     <Sidebar {...props}>
       <SidebarHeader>
-        <Logo></Logo>
+        <Link to="/"><Logo></Logo></Link>
       </SidebarHeader>
       <SidebarContent>
         {/* We create a SidebarGroup for each parent. */}
