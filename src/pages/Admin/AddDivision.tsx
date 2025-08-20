@@ -1,7 +1,10 @@
+import { AddDivisionModal } from "@/components/modules/Admin/Division/AddDivisionModal";
+
 const AddDivision = () => {
     return (
         <div>
-            Add division
+            <h1>kjghsklghe</h1>
+            <AddDivisionModal></AddDivisionModal>
         </div>
     );
 };
